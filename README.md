@@ -97,7 +97,7 @@ Then I joined the AD DC domain and logged in with the user account we created.
 
 <img width="1025" height="766" alt="image" src="https://github.com/user-attachments/assets/876c355d-c334-41ea-aba7-38619f535153" />
 
-**After That I have Configure the Loggin Policies on Group Policy Object and Base on Microsoft’s baseline recommendations.** and installed SYSMON.
+**After That I have Configure the Logging Policies on Group Policy Object and Base on Microsoft’s baseline recommendations.** and installed SYSMON.
 
 -Create a GPO and name it "Audit Policy – Endpoint"
 
