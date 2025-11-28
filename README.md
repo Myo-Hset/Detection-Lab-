@@ -19,7 +19,7 @@ The purpose of creating the Detection Lab project was to establish a controlled 
 - Active Directory - Domain controller managing user accounts, authentication, and configuring audit policies, while sending security logs to Splunk.
 - Kali Linux & Atomic Red Team - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
-## Nework Diragram 
+### Nework Diragram 
 
 <img width="790" height="511" alt="image" src="https://github.com/user-attachments/assets/2b3c5e92-a0fd-4603-a8c8-868e827d9704" />
 
