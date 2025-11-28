@@ -45,6 +45,7 @@ After installing Splunk, I created an indexer called myohset-detect for log inge
 
 <img width="537" height="141" alt="image" src="https://github.com/user-attachments/assets/bb6036f2-78c3-4614-b0be-7d6d1386823a" />
 
+
 Since we have installed Splunk on the Ubuntu Server, we assign an IP address to our Splunk machine.
 
 • 	Host IP: 192.168.1.20
@@ -151,6 +152,9 @@ I onboard the kali Linux and join the my internal network. ANd creaeted Malware 
 <img width="996" height="646" alt="Atomic Redteam" src="https://github.com/user-attachments/assets/817d23a1-cd1a-47b0-adfb-50f89c5d2120" />
 
 
+## Summary
+
+By creating this project, we can demonstrate how logs are transferred, how the tools operate, and how they interact with each other. It also highlights the importance of having visibility and generating alerts in the SIEM.
 
 
 
