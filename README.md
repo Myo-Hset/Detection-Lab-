@@ -31,15 +31,20 @@ The purpose of creating the Detection Lab project was to establish a controlled 
 5. Splunk (SIEM and log analysis)
 6. Attacker Host (Kali Linux)
 
-## Step 1 Onboarding PFSense Firewall
+## Step 1 : Onboarding pfSense Firewall
 <img width="720" height="285" alt="image" src="https://github.com/user-attachments/assets/8986b1ca-8d3d-498c-a01f-e93683a876d5" />
- I have intalled The PFsense Wall and Make Sure to configure 2 network addapter for WAN and LAN.
+
+I have installed the pfSense firewall and configured two network adapters: one for WAN and one for LAN.
+
+I also installed the Squid Proxy on the pfSense firewall for log transfer
+
+<img width="960" height="523" alt="image" src="https://github.com/user-attachments/assets/2eb69dde-f027-4466-a269-7818b90a492a" />
  
  ### Note
  
  - WAN will be External and LAN will be Internal.
 
-## Step 2 Setting Up the Splunk Host and Zeek-Suricurta Host
+## Step 2 : Setting Up the Splunk Host and Zeek-Suricurta Host
 
 After installing Splunk, I created an indexer called myohset-detect for log ingestion and monitoring.
 
@@ -63,7 +68,7 @@ The Same Goal for the Zeek-Suricata Host :
 <img width="881" height="277" alt="image" src="https://github.com/user-attachments/assets/59516992-bbe1-484a-852e-70cf2fcc126a" />
 
 
-## Step 3 Seting Up the Windows Server
+## Step 3 : Seting Up the Windows Server
 
 I have installed the Windowserver aand pormoted to Active Directory Domain Controller and assigned a static IP configuration as follows:
 
@@ -108,7 +113,7 @@ Here is the configuration file:
 
 <img width="751" height="511" alt="image" src="https://github.com/user-attachments/assets/93467671-8f0f-4102-b81c-d3ed90bf6cff" />
 
-### Step 4 - Installing the Splunk Universal Forwarder on Zeek-Suricata, and pfSense.
+### Step 4 : - Installing the Splunk Universal Forwarder on Zeek-Suricata, and pfSense.
 
 I installed the Splunk Forwarder on Zeek, Suricata, and pfSense, and configured them to forward logs to my Splunk server.
 
@@ -119,10 +124,6 @@ Here are the configuration files:
 
 - **pfSense**
 <img width="740" height="192" alt="PFsense" src="https://github.com/user-attachments/assets/33f31fe6-b8e6-4340-9cc1-f966a353c865" />
-
-### Note
--  We have installed the Squid Proxy on the pfSense firewall for log transfer
-<img width="960" height="523" alt="image" src="https://github.com/user-attachments/assets/2eb69dde-f027-4466-a269-7818b90a492a" />
 
 
 To ensure that the logs have been ingested into Splunk, go to Splunk and verify the logs sourcetype.
