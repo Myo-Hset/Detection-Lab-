@@ -51,7 +51,7 @@ After installing Splunk, I created an indexer called myohset-detect for log inge
 <img width="537" height="141" alt="image" src="https://github.com/user-attachments/assets/bb6036f2-78c3-4614-b0be-7d6d1386823a" />
 
 
-Since we have installed Splunk on the Ubuntu Server, we assign an IP address to our Splunk machine.
+Since I have installed Splunk on the Ubuntu Server, I assign an IP address to our Splunk machine.
 
 • 	Host IP: 192.168.1.20
 
@@ -70,7 +70,7 @@ The Same Goal for the Zeek-Suricata Host :
 
 ## Step 3 : Seting Up the Windows Server
 
-I have installed the Windowserver aand pormoted to Active Directory Domain Controller and assigned a static IP configuration as follows:
+I have installed the Windowserver and pormoted to Active Directory Domain Controller and assigned a static IP configuration as follows:
 
 • 	Host IP: 192.168.1.10
 
@@ -93,7 +93,7 @@ I have installed Windows 10 on a virtual machine and assigned a static IP config
 <img width="396" height="452" alt="image" src="https://github.com/user-attachments/assets/c0862e9e-1a36-40da-ac61-0433a9515aab" />
 
 
-Then I joined the AD DC domain and logged in with the user account we created.
+Then I joined the AD DC domain and logged in with the user account I created.
 
 <img width="1025" height="766" alt="image" src="https://github.com/user-attachments/assets/876c355d-c334-41ea-aba7-38619f535153" />
 
@@ -132,7 +132,7 @@ To ensure that the logs have been ingested into Splunk, go to Splunk and verify 
 
 ### The Last Step : Generating Telemetry
 
-I onboard the kali Linux and join the my internal network. ANd creaeted Malware file call **Invoixes.doc.exe** 
+I onboard the kali Linux and join the my internal network. And creaeted Malware file call **Invoixes.doc.exe** 
 
 - I have download **Invoixes.doc.exe** on my windows host and run it. Now we got the logs on my splunk .
 ##### Result
