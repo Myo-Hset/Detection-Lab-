@@ -2,7 +2,8 @@
 
 ## Objective
 
-The purpose of creating the Detection Lab project was to establish a controlled environment for simulating and detecting cyberattacks. Its core objective was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, enabling the generation of test telemetry that mimics real-world attack scenarios.
+Designed and built a controlled lab environment to safely simulate and detect cyberattacks.
+Leveraged SIEM log ingestion and analysis to generate realistic test telemetry, effectively mimicking real-world attack scenarios.
 
 ### Skills Learned
 
