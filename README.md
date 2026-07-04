@@ -157,7 +157,7 @@ index=myohset-detect EventCode=4720
 
 ## Summary
 
-By creating this project, we can demonstrate how logs are transferred, how the tools operate, and how they interact with each other. It also highlights the importance of having visibility and generating alerts in the SIEM.
+This project successfully demonstrates the implementation of an enterprise-grade defense architecture. By bridging network-level visibility (pfSense, Zeek, Suricata) with granular endpoint telemetry (Sysmon, AD GPOs), I established a robust detection pipeline. Simulating real-world attacks via Atomic Red Team highlighted the critical importance of alert validation, log parsing, and the creation of actionable SPL hunting queries within a modern Security Operations Center (SOC).
 
 
 
