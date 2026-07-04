@@ -20,7 +20,7 @@ Leveraged SIEM log ingestion and analysis to generate realistic test telemetry, 
 - Active Directory - Domain controller managing user accounts, authentication, and configuring audit policies, while sending security logs to Splunk.
 - Kali Linux & Atomic Red Team - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
-### Nework Diragram 
+### Network Diagram 
 
 <img width="790" height="511" alt="image" src="https://github.com/user-attachments/assets/2b3c5e92-a0fd-4603-a8c8-868e827d9704" />
 
@@ -45,7 +45,7 @@ I also installed the Squid Proxy on the pfSense firewall for log transfer
  
  - WAN will be External and LAN will be Internal.
 
-## Step 2 : Setting Up the Splunk Host and Zeek-Suricurta Host
+## Step 2 : Setting Up the Splunk Host and Zeek-Suricata Host
 
 After installing Splunk, I created an indexer called myohset-detect for log ingestion and monitoring.
 
@@ -71,7 +71,7 @@ The Same Goal for the Zeek-Suricata Host :
 
 ## Step 3 : Seting Up the Windows Server
 
-I have installed the Windowserver and pormoted to Active Directory Domain Controller and assigned a static IP configuration as follows:
+I have installed the Windows Server and promoted to Active Directory Domain Controller and assigned a static IP configuration as follows:
 
 • 	Host IP: 192.168.1.10
 
@@ -98,7 +98,7 @@ Then I joined the AD DC domain and logged in with the user account I created.
 
 <img width="1025" height="766" alt="image" src="https://github.com/user-attachments/assets/876c355d-c334-41ea-aba7-38619f535153" />
 
-**After That I have Configure the Logging Policies on Group Policy Object and Base on Microsoft’s baseline recommendations.** and installed SYSMON.
+**After That I have Configure the Logging Policies on Group Policy Object and Based on Microsoft’s baseline recommendations.** and installed SYSMON.
 
 -Create a GPO and name it "Audit Policy – Endpoint"
 
@@ -133,7 +133,7 @@ To ensure that the logs have been ingested into Splunk, go to Splunk and verify 
 
 ### The Last Step : Generating Telemetry
 
-I onboard the kali Linux and join the my internal network. And creaeted Malware file call **Invoixes.doc.exe** 
+I onboard the kali Linux and join the my internal network. And Created a malware file called **Invoixes.doc.exe** 
 
 - I have download **Invoixes.doc.exe** on my windows host and run it. Now we got the logs on my splunk .
 ##### Result
@@ -142,7 +142,7 @@ I onboard the kali Linux and join the my internal network. And creaeted Malware 
 - I ran an Nmap scan on my internal network to generate telemetry for detection.
 <img width="578" height="211" alt="image" src="https://github.com/user-attachments/assets/e485bb35-5a21-4824-8193-f7ad40532db9" />
 
-##### Reuslt
+##### Result
 
 <img width="1017" height="390" alt="Nmap tele" src="https://github.com/user-attachments/assets/0e32c966-7c56-41e5-9f18-756b5bc762b5" />
 
