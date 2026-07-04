@@ -154,11 +154,44 @@ index=myohset-detect EventCode=4720
 
 <img width="996" height="646" alt="Atomic Redteam" src="https://github.com/user-attachments/assets/817d23a1-cd1a-47b0-adfb-50f89c5d2120" />
 
-## Splunk Detection Rule 
+## Splunk Alert & Detection Queries
 
+Below are the production-grade Splunk Processing Language (SPL) queries designed to trigger alerts for the malicious activities simulated in this lab.
+
+---
+
+### 1. Alert: Local User Account Creation (Persistence)
+This alert triggers immediately when a new local or domain user account is created, mapping directly to **MITRE ATT&CK T1136 (Create Account)**.
+
+````
+index=myohset-detect sourcetype="XmlWinEventLog:Security" EventCode=4720
+| rename TargetUserName as Created_Account, SubjectUserName as Creating_Actor
+| table _time, Computer, Creating_Actor, Created_Account, TargetDomainName
+````
+Log Source: Windows Security Event Logs (EventCode=4720)
+
+Key Fields Tracked:
+
+Creating_Actor: The user account/system that executed the creation command (e.g., Administrator or a compromised service account).
+
+Created_Account: The name of the newly established account.
+
+### 2. Alert: Suspicious/Malware Process Execution
+This alert triggers when an executable runs using a double extension (e.g., .doc.exe), masquerading as a document, or when it executes out of common user profile directories where malware staging frequently occurs.
+````
 index=myohset-detect sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 
-| search Image="*.doc.exe" OR CommandLine="*.doc.exe*"
-| table _time, Computer, User, Image, CommandLine, ParentImage
+| search Image="*.doc.exe" OR CommandLine="*.doc.exe*" OR Image="*Invoixes.doc.exe" OR Image="*\\AppData\\Local\\Temp\\*"
+| table _time, Computer, User, Image, CommandLine, ParentImage, ProcessId
+````
+Log Source: Microsoft Sysmon Operational Logs (EventCode=1 - Process Creation)
+
+Key Fields Tracked:
+
+Image: The full file path of the executed process.
+
+CommandLine: The exact arguments and string used to launch the process (essential for catching obfuscated or renamed binaries).
+
+ParentImage: The parent process that spawned the executable (e.g., seeing cmd.exe or powershell.exe spawn a weird binary is a high-fidelity indicator of compromise). 
 
 ## Summary
 
