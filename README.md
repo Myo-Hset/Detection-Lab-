@@ -37,7 +37,7 @@ Leveraged SIEM log ingestion and analysis to generate realistic test telemetry, 
 
 I have installed the pfSense firewall and configured two network adapters: one for WAN and one for LAN.
 
-I also installed the Squid Proxy on the pfSense firewall for log transfer
+I also installed Squid Proxy on the pfSense firewall to generate web proxy logs for Splunk ingestion.
 
 <img width="960" height="523" alt="image" src="https://github.com/user-attachments/assets/2eb69dde-f027-4466-a269-7818b90a492a" />
  
@@ -135,7 +135,8 @@ To ensure that the logs have been ingested into Splunk, go to Splunk and verify 
 
 I onboard the kali Linux and join the my internal network. And Created a malware file called **Invoixes.doc.exe** 
 
-- I have download **Invoixes.doc.exe** on my windows host and run it. Now we got the logs on my splunk .
+- I have download **Invoixes.doc.exe** on my windows host and run it. And also to find the local account creation from Atomic Red Team (T1136.001), I searched for Windows Security Event ID 4720:"
+index=myohset-detect EventCode=4720
 ##### Result
 <img width="1021" height="728" alt="Screenshot 2025-11-28 152815" src="https://github.com/user-attachments/assets/e55da36c-ad49-474b-8fa9-3e204ec95766" />
 
