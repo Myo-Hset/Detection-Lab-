@@ -1,9 +1,9 @@
-# Detection-Lab
+# Cybersecurity Detection Lab: SIEM Log Ingestion & Attack Simulation
 
 ## Objective
 
 Designed and built a controlled lab environment to safely simulate and detect cyberattacks.
-Leveraged SIEM log ingestion and analysis to generate realistic test telemetry, effectively mimicking real-world attack scenarios.
+Designed and built a controlled homelab environment to safely simulate and detect cyberattacks. Leveraged SIEM log ingestion and analysis to generate realistic test telemetry, effectively mimicking real-world attack scenarios and mapping them to defensive visibility.
 
 ### Skills Learned
 
@@ -154,6 +154,11 @@ index=myohset-detect EventCode=4720
 
 <img width="996" height="646" alt="Atomic Redteam" src="https://github.com/user-attachments/assets/817d23a1-cd1a-47b0-adfb-50f89c5d2120" />
 
+## Splunk Detection Rule 
+
+index=myohset-detect sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 
+| search Image="*.doc.exe" OR CommandLine="*.doc.exe*"
+| table _time, Computer, User, Image, CommandLine, ParentImage
 
 ## Summary
 
